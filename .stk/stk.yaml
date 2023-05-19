@@ -1,0 +1,26 @@
+schema-version: v1
+kind: manifest
+metadata:
+  name: marvelbucket2
+  description: marvelbucket2
+  stack-version-id: 01H0T6995N7MEESFGMVCRH1BKH
+  stack: marvel-front-stack
+spec:
+  type: infra
+  infra-id: 01H0T8201220973X939EF7NRNS
+  plugins:
+    - name: marvel-front/marvel-front-stack/aws-s3-website@0.0.2
+      plugin-version-id: 01H0T67SB4YZ6EC8S1SMQK1R7N
+      stack-version-id: 01H0T6995N7MEESFGMVCRH1BKH
+      type: infra
+      inputs:
+        bucket_name: stackspot-marvel-bucket-2
+        index_document: index.html
+        error_document: error.html
+      inputs-envs: {}
+      connectors:
+        - name: marvelbucket2
+          type: aws-s3-conn
+  global-inputs: {}
+  global-computed-inputs: {}
+  repository: https://github.com/pedropnaves/stk-infra
