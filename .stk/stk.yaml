@@ -1,0 +1,26 @@
+schema-version: v1
+kind: manifest
+metadata:
+  name: bucketmarvel
+  description: bucketmarvel
+  stack-version-id: 01H0TN9PFT91J6QAH4JTNBXZ3F
+  stack: marvel-front-stack
+spec:
+  type: infra
+  infra-id: 01H0TVFE2632MGPYNA75WDRHTQ
+  plugins:
+    - name: marvel-front/marvel-front-stack/aws-s3-website-full@0.0.1
+      plugin-version-id: 01H0TN7XS93YAX6RNX4GRDRV9X
+      stack-version-id: 01H0TN9PFT91J6QAH4JTNBXZ3F
+      type: infra
+      inputs:
+        bucket_name: stackspot-bucket-marvel
+        index_document: index.html
+        error_document: error.html
+      inputs-envs: {}
+      connectors:
+        - name: marvel-bucket
+          type: aws-s3-conn
+  global-inputs: {}
+  global-computed-inputs: {}
+  repository: https://github.com/pedropnaves/stk-infra
